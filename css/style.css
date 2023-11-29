@@ -1,0 +1,259 @@
+@charset "UFT-8";
+
+@import url('https://fonts.googleapis.com/css?family=Exo+2|Noto+Sans+KR');
+
+/* 리셋 */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 14px;
+    font-family: 'Noto Sans KR', 'sans-serif';
+
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 인헤릿:부모의 글자색 상속받기 */
+
+a img {
+    border: none;
+}
+
+/* 하위버전 브라우저에 링크걸린 이미지 줄생김 현상 없애기 */
+
+
+
+
+
+
+/* 레이아웃 */
+
+#wrap {
+    width: 100%;
+}
+
+#wrap header {
+    width: 100%;
+    height: 100px;
+
+    position: fixed;
+    /* 고정 */
+    top: 0;
+    left: 0;
+    /* 메뉴는무조건최상단 */
+    z-index: 3;
+    /* 수치가 높을수록 순서가 최우선 */
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+#wrap header .headerInner {
+    display: flex;
+    justify-content: space-between;
+    width: 1400px;
+    height: 100%;
+    margin: 0 auto;
+    /* 상하좌우 중앙정렬 */
+}
+
+#wrap header .headerInner h1.logo {
+    width: 13%;
+    /* border: 1px solid red; */
+}
+
+#wrap header .headerInner h1.logo img {
+    margin-top: 27px;
+}
+
+#wrap header .headerInner .gnb {
+    width: 50%;
+    /* border: 1px solid red; */
+}
+
+#wrap header .headerInner .gnb ul {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    /* align-items: center; */
+    margin-top: 27px;
+    width: 100%;
+    /* px로 쓰니까 문제생기지.. */
+
+}
+
+#wrap header .headerInner .gnb ul li a {
+    display: block;
+    font-size: 17px;
+    color: #fff;
+    margin-top: 10px;
+}
+
+#wrap header .headerInner .gnb ul li a:hover,
+#wrap header .headerInner .gnb ul li a:focus {
+
+    color: #ff8342;
+}
+
+/* right menu */
+
+
+#wrap header .headerInner .tnb {
+    width: 37%;
+
+    /* border: 1px solid red; */
+}
+
+#wrap header .headerInner .tnb ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+
+#wrap header .headerInner .tnb ul a {
+    display: block;
+    font-size: 16px;
+    color: #fff;
+    margin-top: 20px;
+}
+
+#wrap header .headerInner .tnb ul li a:hover,
+#wrap header .headerInner .tnb ul li a:focus {
+    color: #ff8342;
+}
+
+/*  아이콘 2종 키우기*/
+
+#wrap header .headerInner .tnb ul li:nth-child(1) a i,
+#wrap header .headerInner .tnb ul li:nth-child(2) a i {
+    font-size: 20px;
+    margin-right: 5px;
+    /* background-color: #000; */
+
+}
+
+/* 제품검색 둥근사각형 버튼 */
+
+#wrap header .headerInner .tnb ul li:last-child a {
+    display: block;
+    border-radius: 30px;
+    width: 130px;
+    height: 32px;
+    line-height: 32px;
+    transition: .3s;
+    text-align: center;
+    border: 1px solid #fff;
+}
+
+#wrap header .headerInner .tnb ul li:nth-child(1) a i{
+    margin-left: 5px;
+}
+
+
+
+
+
+
+/* /===========* 메인 *============/ */
+
+#wrap section.main {
+    background: url("../images/vis_1.jpg")no-repeat center/cover;
+    width: 100%;
+    height: 1000px;
+    position: relative;
+    min-width: 1400px;
+    background-attachment: fixed;
+
+
+}
+
+#wrap section.main .mainTitle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+/* x,y,퍼짐,색-투명도 50% */
+letter-spacing: -1px;
+}
+#wrap section.main .mainTitle h2{
+    font-size: 47px;
+    margin-bottom: 70px;
+    font-weight: normal;
+    /* 굵기해제 */
+}
+
+#wrap section.main .mainTitle p{
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+
+/* 뷰모어 */
+
+#wrap section.main .mainTitle a.view{
+    display: block;
+    /* a태그로 버튼넣을대에는 디스플레이블록 */
+    width: 180px;
+    font-size: 16px;
+    padding: 8px 0;
+    margin: 0 auto;
+    border: 2px solid #fff;
+    position: relative;
+    overflow: hidden;
+    /* 넘치지않게 마스크처리 */
+    border-radius: 40px;
+}
+
+/* 버튼애니메이션 */
+
+#wrap section.main .mainTitle a.view::before{
+    content: "";
+    width: 0;
+    height: 100%;
+    background-color: rgba(255,255,255,0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* 위치주는이유 잘모르겟네.. */
+    transition: .3s;
+}
+#wrap section.main .mainTitle a.view:hover::before,
+#wrap section.main .mainTitle a.view:focus::before{
+    content: "";
+    background-color: rgba(255,255,255,0.4);
+    width: 100%;
+}
+
+
+
+
+
+
+
+
